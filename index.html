@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ciza Balola Séraphin - Réseaux sociaux officiels</title>
+    <meta name="description" content="Page officielle de Ciza Balola Séraphin regroupant tous ses réseaux sociaux, son portfolio et ses moyens de contact.">
+    <meta name="keywords" content="Ciza Balola, Séraphin, Ciza Balola Séraphin, Bukavu, développeur, réseaux sociaux, portfolio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ciza Balola Séraphin - Réseaux sociaux officiels">
+    <meta property="og:description" content="Retrouvez tous mes réseaux sociaux officiels et mon portfolio sur une seule page.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="photo.jpg">
+
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Google Fonts (CDN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cbs-paper: #f7f6f2;
+            --cbs-carte-bg: #ffffff;
+            --cbs-ink: #10131a;
+            --cbs-ink-doux: #565c68;
+            --cbs-ligne: rgba(16, 19, 26, 0.12);
+            --cbs-navy: #1b3358;
+            --cbs-rouge: #d6293b;
+            --cbs-or: #e8a33d;
+        }
+
+        html, body {
+            background-color: var(--cbs-paper);
+            color: var(--cbs-ink);
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, .cbs-serif {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Fine texture de fond, très discrète */
+        body {
+            background-image:
+                radial-gradient(circle at 15% 0%, rgba(27, 51, 88, 0.05), transparent 40%),
+                radial-gradient(circle at 90% 100%, rgba(214, 41, 59, 0.05), transparent 45%);
+        }
+
+        .cbs-nav {
+            background-color: rgba(247, 246, 242, 0.88);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--cbs-ligne);
+        }
+
+        .cbs-nav .navbar-brand {
+            font-family: 'IBM Plex Mono', monospace;
+            letter-spacing: 0.14em;
+            font-size: 0.85rem !important;
+            color: var(--cbs-ink) !important;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .cbs-nav .navbar-brand::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--cbs-rouge);
+            box-shadow: 0 0 0 3px rgba(214, 41, 59, 0.18);
+            flex: none;
+        }
+
+        .cbs-eyebrow {
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--cbs-navy);
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border: 1px solid var(--cbs-ligne);
+            border-radius: 999px;
+            background: var(--cbs-carte-bg);
+        }
+
+        .cbs-photo-wrap {
+            position: relative;
+            width: 168px;
+            height: 168px;
+            margin: 0 auto;
+            border-radius: 50%;
+            padding: 6px;
+        }
+
+        .cbs-photo-wrap::before {
+            content: "";
+            position: absolute;
+            inset: -9px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(27, 51, 88, 0.35);
+        }
+
+        .cbs-photo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg, var(--cbs-navy), var(--cbs-rouge), var(--cbs-or), var(--cbs-navy));
+            z-index: -1;
+        }
+
+        .cbs-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--cbs-paper);
+            display: block;
+            background-color: var(--cbs-carte-bg);
+        }
+
+        .cbs-nom {
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+        }
+
+        .cbs-nom .cbs-nom-accent {
+            color: var(--cbs-rouge);
+        }
+
+        .cbs-presentation {
+            max-width: 560px;
+            margin: 0 auto;
+            color: var(--cbs-ink-doux);
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+
+        /* Rangée horizontale défilante des cartes */
+        .cbs-row-h {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.85rem;
+            overflow-x: auto;
+            padding: 0.35rem 0.1rem 1.1rem;
+            scroll-snap-type: x proximity;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cbs-navy) transparent;
+        }
+
+        .cbs-row-h::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .cbs-row-h::-webkit-scrollbar-thumb {
+            background: var(--cbs-ligne);
+            border-radius: 999px;
+        }
+
+        .cbs-col-h {
+            flex: 0 0 auto;
+            width: 240px;
+            scroll-snap-align: start;
+        }
+
+        .cbs-col-h .cbs-carte {
+            height: 100%;
+        }
+
+        @media (max-width: 575.98px) {
+            .cbs-col-h { width: 210px; }
+        }
+
+        /* Cartes des réseaux sociaux */
+        .cbs-carte {
+            position: relative;
+            background-color: var(--cbs-carte-bg);
+            border: 1px solid var(--cbs-ligne);
+            border-radius: 14px;
+            padding: 1.1rem 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--cbs-ink);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            min-height: 76px;
+            overflow: hidden;
+            opacity: 0;
+            animation: cbsMonter 0.5s ease forwards;
+        }
+
+        .cbs-carte::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 0%;
+            background: var(--cbs-rouge);
+            transition: width 0.25s ease;
+        }
+
+        .cbs-carte:hover, .cbs-carte:focus-visible {
+            transform: translateY(-4px);
+            border-color: rgba(16, 19, 26, 0.22);
+            box-shadow: 0 14px 30px rgba(16, 19, 26, 0.08);
+            color: var(--cbs-ink);
+        }
+
+        .cbs-carte:hover::after {
+            width: 100%;
+        }
+
+        .cbs-icone {
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            background: rgba(27, 51, 88, 0.08);
+            color: var(--cbs-navy);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .cbs-carte:hover .cbs-icone {
+            background: var(--cbs-rouge);
+            color: #fff;
+        }
+
+        .cbs-carte-titre {
+            font-weight: 600;
+            font-size: 0.96rem;
+            margin-bottom: 0;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .cbs-carte-fleche {
+            margin-left: auto;
+            color: var(--cbs-ink-doux);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .cbs-carte:hover .cbs-carte-fleche {
+            transform: translateX(4px) translateY(-2px);
+            color: var(--cbs-rouge);
+        }
+
+        .cbs-section-titre {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--cbs-ink);
+            letter-spacing: -0.01em;
+            font-weight: 600;
+        }
+
+        /* Divider façon perforation de pellicule 35mm */
+        .cbs-divider {
+            width: 130px;
+            height: 10px;
+            margin: 0.85rem auto 1.75rem;
+            background-image: repeating-linear-gradient(
+                to right,
+                var(--cbs-navy) 0px,
+                var(--cbs-navy) 8px,
+                transparent 8px,
+                transparent 16px
+            );
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.55;
+            border-radius: 2px;
+        }
+
+        /* Bouton portfolio, mis en avant */
+        .cbs-portfolio {
+            background: linear-gradient(135deg, var(--cbs-navy), #142644);
+            border: 1px solid var(--cbs-navy);
+            color: #f4f1ea;
+        }
+
+        .cbs-portfolio .cbs-carte-titre {
+            color: #f4f1ea;
+        }
+
+        .cbs-portfolio .cbs-icone {
+            background: rgba(232, 163, 61, 0.18);
+            color: var(--cbs-or);
+        }
+
+        .cbs-portfolio .cbs-carte-fleche {
+            color: rgba(244, 241, 234, 0.7);
+        }
+
+        .cbs-portfolio::after {
+            background: var(--cbs-or);
+        }
+
+        .cbs-portfolio:hover .cbs-icone {
+            background: var(--cbs-or);
+            color: var(--cbs-navy);
+        }
+
+        .cbs-portfolio:hover .cbs-carte-fleche {
+            color: var(--cbs-or);
+        }
+
+        .cbs-portfolio:hover {
+            border-color: var(--cbs-or);
+        }
+
+        footer.cbs-footer {
+            border-top: 1px solid var(--cbs-ligne);
+            color: var(--cbs-ink-doux);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        footer.cbs-footer a {
+            color: var(--cbs-navy);
+            text-decoration: none;
+        }
+
+        footer.cbs-footer a:hover {
+            color: var(--cbs-rouge);
+            text-decoration: underline;
+        }
+
+        /* Apparition légère et échelonnée des cartes */
+        @keyframes cbsMonter {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .cbs-col-h:nth-child(1) .cbs-carte { animation-delay: 0.02s; }
+        .cbs-col-h:nth-child(2) .cbs-carte { animation-delay: 0.08s; }
+        .cbs-col-h:nth-child(3) .cbs-carte { animation-delay: 0.14s; }
+        .cbs-col-h:nth-child(4) .cbs-carte { animation-delay: 0.20s; }
+        .cbs-col-h:nth-child(5) .cbs-carte { animation-delay: 0.26s; }
+        .cbs-col-h:nth-child(6) .cbs-carte { animation-delay: 0.32s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cbs-carte, .cbs-carte-fleche, .cbs-icone {
+                transition: none !important;
+                animation: none !important;
+                opacity: 1 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar cbs-nav sticky-top py-3">
+        <div class="container justify-content-center">
+            <span class="navbar-brand mb-0 h1 fs-4">CIZA SOCIAL HUB</span>
+        </div>
+    </nav>
+
+    <!-- Profil -->
+    <header class="container text-center pt-5 pb-3">
+        <p class="cbs-eyebrow mb-3">Page officielle</p>
+
+        <div class="cbs-photo-wrap mb-4">
+            <!-- ============================================= -->
+            <!-- 1. PHOTO DE PROFIL : remplacez "photo.jpg" par -->
+            <!-- le nom exact de votre fichier photo.            -->
+            <!-- ============================================= -->
+            <img src="photo.jpg" alt="Photo de profil de Ciza Balola Séraphin">
+        </div>
+
+        <h1 class="cbs-nom fs-2 mb-2">CIZA BALOLA <span class="cbs-nom-accent">SÉRAPHIN</span></h1>
+
+        <!-- ============================================= -->
+        <!-- 8. PRÉSENTATION : modifiez le texte ci-dessous -->
+        <!-- ============================================= -->
+        <p class="cbs-presentation mb-0">
+            Développeur et étudiant à Bukavu (RDC), passionné par le cinéma et les technologies
+            au service de la communauté. Bienvenue sur ma page officielle — retrouvez ici tous
+            mes réseaux sociaux et mes projets.
+        </p>
+    </header>
+
+    <!-- Réseaux sociaux -->
+    <main class="container py-4">
+        <div class="text-center mb-4">
+            <h2 class="cbs-section-titre fs-4">Réseaux sociaux</h2>
+            <div class="cbs-divider"></div>
+        </div>
+
+        <div class="cbs-row-h">
+
+            <!-- 2. FACEBOOK : remplacez MON_LIEN_FACEBOOK -->
+            <div class="cbs-col-h">
+                <a href="https://www.facebook.com/ciza.balola.368718" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Suivez-moi sur Facebook">
+                    <span class="cbs-icone"><i class="bi bi-facebook" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Suivez-moi sur Facebook</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- 3. TIKTOK : remplacez MON_LIEN_TIKTOK -->
+            <div class="cbs-col-h">
+                <a href="https://vm.tiktok.com/ZS9kd46mHmUgU-qNbF5/" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Suivez-moi sur TikTok">
+                    <span class="cbs-icone"><i class="bi bi-tiktok" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Suivez-moi sur TikTok</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- 4. YOUTUBE : remplacez MON_LIEN_YOUTUBE -->
+            <div class="cbs-col-h">
+                <a href="https://youtube.com/@seraphinciza?si=UJTaIypsHLagWnEn" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Abonnez-vous à ma chaîne YouTube">
+                    <span class="cbs-icone"><i class="bi bi-youtube" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Abonnez-vous à ma chaîne YouTube</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- 5. INSTAGRAM : remplacez MON_LIEN_INSTAGRAM -->
+            <div class="cbs-col-h">
+                <a href="MON_LIEN_INSTAGRAM" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Suivez-moi sur Instagram">
+                    <span class="cbs-icone"><i class="bi bi-instagram" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Suivez-moi sur Instagram</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- 6. WHATSAPP : remplacez MON_LIEN_WHATSAPP -->
+            <div class="cbs-col-h">
+                <a href="MON_LIEN_WHATSAPP" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Contactez-moi sur WhatsApp">
+                    <span class="cbs-icone"><i class="bi bi-whatsapp" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Contactez-moi sur WhatsApp</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- 7. GITHUB : remplacez MON_LIEN_GITHUB -->
+            <div class="cbs-col-h">
+                <a href="MON_LIEN_GITHUB" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Découvrez mes projets sur GitHub">
+                    <span class="cbs-icone"><i class="bi bi-github" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Découvrez mes projets</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Portfolio -->
+        <div class="text-center mt-5 mb-4">
+            <h2 class="cbs-section-titre fs-4">Portfolio</h2>
+            <div class="cbs-divider"></div>
+        </div>
+
+        <div class="cbs-row-h">
+            <!-- PORTFOLIO : remplacez MON_LIEN_PORTFOLIO par le lien de votre portfolio -->
+            <div class="cbs-col-h" style="width: 300px;">
+                <a href="MON_LIEN_PORTFOLIO" class="cbs-carte cbs-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Découvrez mon portfolio de développeur">
+                    <span class="cbs-icone"><i class="bi bi-briefcase" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Découvrez mon portfolio</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Autres liens -->
+        <div class="text-center mt-5 mb-4">
+            <h2 class="cbs-section-titre fs-4">Autres liens</h2>
+            <div class="cbs-divider"></div>
+        </div>
+
+        <div class="cbs-row-h">
+
+            <!-- LINKEDIN : remplacez MON_LIEN_LINKEDIN -->
+            <div class="cbs-col-h">
+                <a href="https://www.linkedin.com/in/seraphin-ciza-balola-b642a0386" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Retrouvez-moi sur LinkedIn">
+                    <span class="cbs-icone"><i class="bi bi-linkedin" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Retrouvez-moi sur LinkedIn</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- TELEGRAM : remplacez MON_LIEN_TELEGRAM -->
+            <div class="cbs-col-h">
+                <a href="MON_LIEN_TELEGRAM" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Rejoignez-moi sur Telegram">
+                    <span class="cbs-icone"><i class="bi bi-telegram" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Rejoignez-moi sur Telegram</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- X (TWITTER) : remplacez MON_LIEN_X -->
+            <div class="cbs-col-h">
+                <a href="MON_LIEN_X" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Suivez-moi sur X">
+                    <span class="cbs-icone"><i class="bi bi-twitter-x" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Suivez-moi sur X</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <!-- SNAPCHAT : remplacez MON_LIEN_SNAPCHAT -->
+            <div class="cbs-col-h">
+                <a href="MON_LIEN_SNAPCHAT" class="cbs-carte" target="_blank" rel="noopener noreferrer" aria-label="Ajoutez-moi sur Snapchat">
+                    <span class="cbs-icone"><i class="bi bi-snapchat" aria-hidden="true"></i></span>
+                    <p class="cbs-carte-titre">Ajoutez-moi sur Snapchat</p>
+                    <i class="bi bi-arrow-up-right cbs-carte-fleche" aria-hidden="true"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cbs-footer text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 small">&copy; <span id="cbs-annee">2026</span> Ciza Balola Séraphin. Tous droits réservés.</p>
+            <p class="mb-0 small">Bukavu, République Démocratique du Congo</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
